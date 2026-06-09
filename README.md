@@ -48,4 +48,14 @@ This repository includes a GitHub Actions workflow at `.github/workflows/android
 
 If your remote machine is registered as a GitHub Actions self-hosted runner, it can build this app too. In **Run workflow**, choose `self-hosted` for the runner input. This helps if you want builds to run on your own hardware or avoid GitHub-hosted runner queue time.
 
-Your remote runner should have network access, permission to install/use Android SDK packages, and enough disk space for Gradle and Android build caches. The workflow installs Android SDK platform 35 and build tools 35.0.0 before running `gradle assembleDebug`.
+Install or verify these prerequisites on the self-hosted runner:
+
+- A supported 64-bit runner operating system such as Ubuntu 20.04 or newer, Debian 10 or newer, Windows 10/11, Windows Server 2016 or newer, or macOS 11 or newer.
+- The GitHub Actions runner application registered to this repository or organization, online, idle, and labeled `self-hosted`.
+- Outbound HTTPS access on port 443 so the runner can communicate with GitHub and download build dependencies.
+- Gradle installed and available on `PATH`, because this repository currently runs `gradle assembleDebug` instead of a checked-in `./gradlew` wrapper.
+- Permission for workflow steps to download and install Android SDK command-line tools, platform 35, build tools 35.0.0, and platform-tools. The workflow handles these Android SDK installs automatically.
+- Network access to Google Maven, Maven Central, the Gradle Plugin Portal, and Android SDK download endpoints so Gradle and `sdkmanager` can resolve dependencies.
+- Enough disk space for Android SDK packages plus Gradle caches; 10 GB free is a practical minimum, and 20 GB or more is safer.
+
+You do **not** need to preinstall JDK 17 or the Android SDK if the runner can download tools during the job: the workflow uses `actions/setup-java` to install Temurin JDK 17 and `android-actions/setup-android` plus `sdkmanager` to install the Android SDK packages before running `gradle assembleDebug`.
