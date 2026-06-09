@@ -1,13 +1,14 @@
 # Artemis Wallpaper
 
-Artemis Wallpaper is a small Android app that fetches a random image from NASA's Image and Video Library for Artemis mission imagery and sets it as the device wallpaper.
+Artemis Wallpaper is a small native Android app that fetches random imagery from NASA's Image and Video Library for Artemis mission content and sets it as the device wallpaper.
 
 ## Features
 
 - Searches the NASA Images API for Artemis mission images.
-- Downloads a random preview image from the result set.
-- Shows the downloaded image in the app.
-- Uses Android's `WallpaperManager` to set the phone background.
+- Resolves each selected NASA library item to its downloadable asset manifest and prefers original or large image files for wallpaper quality.
+- Downsamples large images before decoding and center-crops them to the device wallpaper dimensions to reduce memory pressure.
+- Shows the downloaded image and NASA title in the app.
+- Uses Android's `WallpaperManager` to set either the home wallpaper or both home and lock wallpapers.
 
 ## Build
 

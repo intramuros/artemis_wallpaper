@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Artemis Wallpaper</string>
+    <string name="app_title">Artemis Wallpaper</string>
+    <string name="app_description">Fetch a random NASA Artemis mission image and set it as your phone background.</string>
+    <string name="preview_content_description">Preview of the downloaded NASA Artemis image</string>
+    <string name="no_image_selected">No image selected yet</string>
+    <string name="ready_status">Tap a button to download an Artemis image.</string>
+    <string name="set_home_wallpaper">Set home wallpaper</string>
+    <string name="set_home_lock_wallpaper">Set home and lock wallpaper</string>
+    <string name="finding_images_status">Finding Artemis mission images...</string>
+    <string name="finding_asset_status">Finding a high-resolution NASA image asset...</string>
+    <string name="downloading_status">Downloading image...</string>
+    <string name="setting_wallpaper_status">Setting wallpaper...</string>
+    <string name="wallpaper_updated_status">Wallpaper updated from NASA Artemis imagery.</string>
+    <string name="wallpaper_error_status">Unable to update wallpaper: %1$s</string>
+    <string name="no_images_error">NASA did not return any Artemis images.</string>
+    <string name="decode_error">Downloaded image could not be decoded.</string>
 </resources>
